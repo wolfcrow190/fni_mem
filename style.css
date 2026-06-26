@@ -1,0 +1,653 @@
+/* --- VARIABLES DE COLOR --- */
+:root {
+    --bg-dark: #02020B;
+    --text-light: #F4F4F9;
+    --accent-primary: #8884FF;
+    --accent-secondary: #8C001A;
+    --muted-gray: #545C52;
+}
+
+/* --- ESTILOS GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --- Componente: Botones --- */
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #706ce0;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--accent-primary);
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+}
+
+.btn-group {
+    display: flex; 
+    gap: 15px;
+}
+
+/* --- 1. NAVBAR --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%; /* Aumentamos ligeramente el padding superior e inferior */
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+/* --- Ajustes para el contenedor del logo --- */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* --- Control del tamaño de la imagen del logo --- */
+.logo-img {
+    height: 100px; /* Subimos de 50px a 75px para que tenga buena presencia */
+    width: auto;  /* Mantiene la proporción para que no se deforme */
+    display: block;
+    object-fit: contain; /* Asegura que se renderice con la máxima calidad */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.logo-img:hover {
+    transform: scale(1.03);
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-primary);
+}
+
+.user-profile {
+    border: 1px solid var(--muted-gray);
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+/* --- 2. HERO SECTION --- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background: radial-gradient(circle at 80% 20%, rgba(136, 132, 255, 0.15), transparent 45%), 
+                radial-gradient(circle at 85% 30%, var(--accent-secondary), transparent 30%),
+                var(--bg-dark);
+}
+
+.hero-content {
+    max-width: 500px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 14px;
+    color: #b0b0bc;
+    margin-bottom: 30px;
+}
+
+/* --- 3. GRID DE ESPECIFICACIONES --- */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 60px 8%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #080815 100%);
+}
+
+.spec-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(84, 92, 82, 0.3);
+    padding: 40px;
+    text-align: center;
+    border-radius: 4px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.spec-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary) !important; /* El JS cambia esto, pero aseguramos transiciones suaves */
+}
+
+.spec-icon {
+    font-size: 30px;
+    color: var(--accent-primary);
+    margin-bottom: 15px;
+}
+
+.spec-card h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #b0b0bc;
+    margin-bottom: 10px;
+}
+
+.spec-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.spec-sub {
+    font-size: 12px;
+    color: var(--muted-gray);
+}
+
+/* --- 4 & 5. SECCIONES DE CONTENIDO --- */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 8%;
+    gap: 60px;
+}
+
+.section-tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-secondary);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.content-section h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.content-section p {
+    color: #b0b0bc;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 350px;
+    background-color: #0b0b18;
+    border: 1px solid var(--muted-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    border: 1px solid rgba(136, 132, 255, 0.1);
+    border-radius: 40%;
+    top: -50%;
+    left: -50%;
+    animation: rotate 20s linear infinite;
+}
+
+.placeholder-text {
+    z-index: 1;
+}
+
+.placeholder-text.text-primary {
+    color: var(--accent-primary);
+}
+
+.placeholder-text.text-secondary {
+    color: var(--accent-secondary);
+}
+
+/* --- 6. FOOTER --- */
+footer {
+    background-color: #010107;
+    padding: 40px 8%;
+    border-top: 1px solid rgba(84, 92, 82, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted-gray);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* --- ANIMACIONES Y RESPONSIVE --- */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    header, nav ul { flex-direction: column; gap: 15px; text-align: center; }
+    .hero { text-align: center; padding-top: 140px; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .content-section { grid-template-columns: 1fr; text-align: center; }
+    .image-placeholder { order: -1; }
+}
+/* --- Estilos para el botón de contacto en el Navbar --- */
+.btn-contact {
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(136, 132, 255, 0.4);
+}
+/* --- Nueva etiqueta conmemorativa en el Hero --- */
+.hero-date-tag {
+    display: inline-block;
+    background-color: rgba(140, 0, 26, 0.2); /* Base de tu color --accent-secondary */
+    color: #FFD700; /* Un tono dorado sutil para resaltar la fecha conmemorativa */
+    border: 1px solid var(--accent-secondary);
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(140, 0, 26, 0.3);
+}
+
+/* --- Ajuste extra para los títulos del Hero --- */
+.hero-content h1 {
+    font-size: 52px; /* Reducido ligeramente para acomodar mejor textos institucionales largos */
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* --- Ajustes en las tarjetas de las Ramas de Especialidad --- */
+.spec-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(84, 92, 82, 0.3);
+    padding: 35px 25px; /* Ajustamos el padding para acomodar mejor el texto */
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.spec-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(136, 132, 255, 0.1);
+}
+
+.spec-card h3 {
+    font-size: 16px; /* Incrementado ligeramente para los nombres de las ramas */
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+}
+
+.spec-value {
+    font-size: 22px; /* Reducido un poco para que entren los títulos como "Automatización" sin romperse */
+    font-weight: bold;
+    color: var(--accent-primary);
+    margin-bottom: 15px;
+}
+
+.spec-sub {
+    font-size: 13px;
+    color: #b0b0bc;
+    line-height: 1.5;
+}
+/* --- Estilos para la Línea de Tiempo Académica --- */
+.timeline {
+    position: relative;
+    border-left: 2px solid var(--muted-gray);
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    opacity: 0.6; /* Hitos pasados ligeramente atenuados */
+    transition: all 0.3s ease;
+}
+
+/* El año actual resalta más */
+.timeline-item.active {
+    opacity: 1;
+    border-left: 3px solid var(--accent-primary);
+    padding-left: 10px;
+    margin-left: -13px;
+}
+
+.timeline-year {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--accent-primary);
+    background-color: rgba(136, 132, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.timeline-item.active .timeline-year {
+    color: #FFD700; /* Dorado para el año en curso */
+    background-color: rgba(140, 0, 26, 0.3);
+    border: 1px solid var(--accent-secondary);
+}
+
+.timeline-item p {
+    font-size: 13px;
+    color: #b0b0bc;
+    margin-bottom: 0;
+}
+/* --- FOOTER ÉPICO --- */
+footer {
+    background-color: #010105;
+    padding: 60px 8% 20px 8%;
+    border-top: 2px solid var(--accent-secondary); /* Línea roja FNI de separación */
+    position: relative;
+}
+
+/* Distribución en columnas responsivas */
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+    font-size: 22px;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer-brand .lema {
+    font-style: italic;
+    color: #FFD700; /* Dorado institucional para el lema */
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.footer-brand .copyright {
+    font-size: 12px;
+    color: var(--muted-gray);
+}
+
+.footer-nav h4, .footer-socials h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-primary);
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    font-size: 13px;
+    color: #b0b0bc;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-light);
+    padding-left: 5px; /* Efecto dinámico al pasar el cursor */
+}
+
+.footer-socials p {
+    font-size: 12px;
+    color: #b0b0bc;
+    margin-bottom: 15px;
+}
+
+/* Contenedor de Redes Sociales */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(84, 92, 82, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Efectos hover dedicados para simular una interfaz encendida */
+.social-icons a:hover {
+    transform: translateX(5px);
+    color: var(--bg-dark);
+}
+
+.social-icons .icon-fb:hover { background-color: #1877F2; border-color: #1877F2; }
+.social-icons .icon-yt:hover { background-color: #FF0000; border-color: #FF0000; }
+.social-icons .icon-tk:hover { background-color: #000000; border-color: #00F2FE; box-shadow: 0 0 10px rgba(0, 242, 254, 0.5); color: #fff; }
+
+/* Línea técnica de cierre inferior */
+.footer-bottom-line {
+    border-top: 1px solid rgba(84, 92, 82, 0.2);
+    padding-top: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--muted-gray);
+    letter-spacing: 1px;
+}
+
+/* Ajuste Responsivo para pantallas móviles */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-links, .social-icons {
+        align-items: center;
+    }
+    .social-icons a {
+        width: 80%;
+    }
+}
+/* --- ELEMENTO FLOTANTE DE FONDO (HOLOGRAMA) --- */
+.background-hologram {
+    position: fixed; /* Se queda fijo al hacer scroll, dando un efecto inmersivo */
+    top: 50%;
+    right: -10%; /* Lo desplazamos ligeramente a la derecha similar al diseño espacial original */
+    transform: translateY(-50%);
+    width: 65vw; /* Ocupa un tamaño proporcional al ancho de la pantalla */
+    max-width: 900px;
+    height: auto;
+    z-index: 0; /* Se posiciona por detrás del texto pero por encima del fondo negro */
+    pointer-events: none; /* Evita que interfiera con los clics en botones o enlaces */
+    opacity: 0.25; /* Opacidad sutil para que luzca como un holograma de fondo sin saturar */
+    filter: drop-shadow(0 0 50px rgba(140, 0, 26, 0.3)); /* Resalta el brillo rojo perimetral */
+    animation: floatingHologram 6s ease-in-out infinite; /* Movimiento sutil de flotación */
+}
+
+.background-hologram img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- ANIMACIÓN ÉPICA DE FLOTACIÓN (Efecto Suspensión) --- */
+@keyframes floatingHologram {
+    0% {
+        transform: translateY(-50%) translateX(0px);
+    }
+    50% {
+        transform: translateY(-53%) translateX(-10px); /* Sube un poco y se desplaza */
+    }
+    100% {
+        transform: translateY(-50%) translateX(0px);
+    }
+}
+
+/* Ajuste de capas para que el contenido pase por encima del holograma de fondo */
+.hero, .specs-grid, .content-section, footer {
+    position: relative;
+    z-index: 1; 
+}
+/* --- CONTENEDOR PARA VIDEO VERTICAL DE CELULAR --- */
+.video-container-vertical {
+    width: 100%;
+    height: 450px; /* Le damos un poco más de altura para favorecer el formato vertical */
+    background-color: #010107;
+    border: 1px solid rgba(136, 132, 255, 0.2); /* Sutil borde con tu color primario */
+    box-shadow: 0 0 20px rgba(136, 132, 255, 0.05);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-container-vertical video {
+    height: 100%;  /* El video vertical escalará acoplándose al alto del recuadro */
+    width: auto;   /* Mantiene sus proporciones nativas de grabación vertical */
+    max-width: 100%;
+    object-fit: contain; /* Evita cualquier tipo de distorsión o estiramiento */
+    background-color: #000;
+}
+
+/* Ajuste responsivo para móviles */
+@media (max-width: 768px) {
+    .video-container-vertical {
+        height: 400px; /* Un poco más compacto en pantallas pequeñas */
+        order: -1;     /* Mantiene el orden para que el video aparezca arriba del texto en celulares */
+    }
+}
+/* --- CONTENEDOR PARA VIDEO HORIZONTAL --- */
+.video-container-horizontal {
+    width: 100%;
+    height: 350px; /* Misma altura que tus bloques de diseño originales */
+    background-color: #010107;
+    border: 1px solid rgba(140, 0, 26, 0.3); /* Sutil borde rojo institucional */
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container-horizontal video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video horizontal llene el espacio elegantemente */
+    z-index: 1;
+}
+
+/* Capa de bloqueo tipo "Avengers" antes de revelar el video */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 2, 11, 0.85); /* Fondo oscuro translúcido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.5s ease, pointer-events 0.5s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cuando se activa el video, removemos la capa de bloqueo */
+.video-overlay.unlocked {
+    opacity: 0;
+    pointer-events: none;
+}

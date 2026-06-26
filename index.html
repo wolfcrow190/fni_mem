@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTO | FNI | Mecánica Electromecánica & Mecatrónica</title>
+    <link rel="icon" type="image/png" href="img/MEM_Logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div class="logo"><a href="#"><img src="img/FNI_Logo.png" alt="Logo FNI MEM" class="logo-img"></a></div>
+    <div class="background-hologram"><img src="img/MEM_Fondo.png" alt="Holograma Institucional MEM"></div>
+    <nav>
+        <ul>
+            <li><a href="#carreras">Especialidades</a></li>
+            <li><a href="#mision-vision">Misión y Visión</a></li>
+            <li><a href="#tech">Laboratorios</a></li>
+            <li><a href="#galeria">Multimedia</a></li>
+        </ul>
+    </nav>
+    
+    <a href="#contacto" class="btn-contact">Contacto Institucional</a>
+</header>
+
+   <section class="hero">
+    <div class="hero-content">
+        <span class="hero-date-tag">3 de Julio: Aniversario FNI</span>
+        
+        <h1>Forjando la Ingeniería del Futuro</h1>
+        
+        <p>Desde nuestra fundación histórica el 3 de julio, la Facultad Nacional de Ingeniería ha liderado el desarrollo técnico y académico. Las líneas de Mecánica, Electromecánica y Mecatrónica continúan ese legado mediante la investigación, el modelado dinámico y la automatización inteligente al servicio de la sociedad.</p>
+        
+        <div class="btn-group">
+            <button class="btn-primary" id="btn-start">Explorar Especialidades</button>
+            <a href="#historia" class="btn-secondary">Nuestra Historia</a>
+        </div>
+    </div>
+</section>
+
+    <section class="specs-grid" id="carreras">
+    <div class="spec-card">
+        <div class="spec-icon">⚙️</div>
+        <h3>MECÁNICA</h3>
+        <div class="spec-value">Diseño y Energía</div>
+        <div class="spec-sub">Sistemas térmicos, estructuras, fluidos y manufactura de precisión para la industria.</div>
+    </div>
+
+    <div class="spec-card">
+        <div class="spec-icon">⚡</div>
+        <h3>ELECTROMECÁNICA</h3>
+        <div class="spec-value">Potencia y Control</div>
+        <div class="spec-sub">Conversión de energía, máquinas eléctricas, redes de distribución y sistemas de tracción.</div>
+    </div>
+
+    <div class="spec-card">
+        <div class="spec-icon">🤖</div> <h3>MECATRÓNICA</h3>
+        <div class="spec-value">Automatización Inteligente</div>
+        <div class="spec-sub">Sistemas ciberfísicos, robótica, control predictivo, sensores inteligentes e IoT industrial.</div>
+    </div>
+</section>
+
+    <section class="content-section" id="proyecto-aniversario">
+    <div>
+        <span class="section-tag">— INGENIERÍA EN MOVIMIENTO</span>
+        <h2>Proyecto Animatrónico Gigante</h2>
+        <p>Nuestro proyecto insignia para el desfile conmemorativo del 3 de julio. Una demostración real de ingeniería donde convergen el diseño de estructuras mecánicas de gran escala, sistemas de transmisión de potencia electromecánica y algoritmos de control mecatrónico en tiempo real para sincronizar movimientos fluidos y autónomos.</p>
+        <button class="btn-primary">Ver Detalles Técnicos</button>
+    </div>
+    
+    <div class="video-container-vertical">
+        <video controls playsinline preload="metadata" poster="img/MEM_Fondo.png">
+            <source src="video/FNI_118.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos en HTML5.
+        </video>
+    </div>
+</section>
+
+    <section class="content-section" id="timeline-universidad">
+    <!-- Bloque Izquierdo: La historia y los hitos anuales -->
+    <div>
+        <span class="section-tag">— EL UNIVERSO DE NUESTROS PROYECTOS</span>
+        <h2>Evolución del 3 de Julio</h2>
+        <p>Cada aniversario dejamos una huella en las calles de Oruro y, al mismo estilo de las escenas post-créditos, sembramos la semilla del próximo gran desafío de ingeniería ciberfísica.</p>
+        
+        <!-- Contenedor del Timeline -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <p><strong>Fase 1: El Despertar Mecánico.</strong> Primer chasis de alta resistencia con sistemas de transmisión eléctrica sincrónica.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2025</span>
+                <p><strong>Fase 2: El Nexo Electromecánico.</strong> Integración de bancos de baterías de litio de alta descarga y actuadores neumáticos de respuesta rápida.</p>
+            </div>
+            <div class="timeline-item active">
+                <span class="timeline-year">2026</span>
+                <p><strong>Fase 3: La Era Animatrónica.</strong> Control en lazo cerrado, sensores dinámicos y algoritmos de movimiento autónomo para el coloso del desfile.</p>
+            </div>
+        </div>
+
+        <!-- Botones de Interacción -->
+        <div class="btn-group">
+            <button class="btn-secondary" id="btn-historia-completa">Ver Historial</button>
+            <button class="btn-primary" id="btn-submit">Ver Escena Post-Créditos</button>
+        </div>
+    </div>
+
+    <!-- Bloque Derecho: Reproductor optimizado para Video Horizontal -->
+    <div class="video-container-horizontal">
+        <video id="video-post-creditos" preload="metadata" poster="img/MEM_Fondo.png">
+            <source src="video/MEM_2025.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos en HTML5.
+        </video>
+        <!-- Capa superpuesta con el texto misterioso inicial -->
+        <div class="video-overlay" id="video-lock-screen">
+            <span class="placeholder-text text-secondary">[ 🔒 ARCHIVO CLASIFICADO: Proyecto Desclasificado ]</span>
+        </div>
+    </div>
+</section>
+   <footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>FNI - MEM</h3>
+            <p class="lema">"Mente, Mano y Corazón forjan la Ingeniería"</p>
+            <p class="copyright">Mecánica, Electromecánica & Mecatrónica &copy; 2026</p>
+        </div>
+
+        <div class="footer-nav">
+            <h4>Recursos</h4>
+            <div class="footer-links">
+                <a href="#carreras">Menciones</a>
+                <a href="#timeline-universidad">Cronograma 3 de Julio</a>
+                <a href="#">Plan de Estudios</a>
+            </div>
+        </div>
+
+        <div class="footer-socials">
+            <h4>Transmisión y Comunidad</h4>
+            <p>Sigue el despliegue del Animatrónico en vivo:</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="icon-fb">🔵 Facebook</a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="icon-yt">🔴 YouTube</a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok" class="icon-tk">⚫ TikTok</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom-line">
+        <span>SISTEMA DE TELEMETRÍA WEB v2.6 // INGENIERÍA DE EXCELENCIA</span>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
